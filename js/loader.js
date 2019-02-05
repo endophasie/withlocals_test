@@ -11,7 +11,7 @@ const toJSON = (response) => response.json();
 
 class Loader {
   static loadData() {
-    return fetchJsonp(`${SERVER_URL}`)
+    return fetch(`${SERVER_URL}`)
       .then(checkStatus)
       .then(toJSON);
   }
