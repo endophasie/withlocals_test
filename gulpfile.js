@@ -7,17 +7,19 @@ const rollup = require('gulp-better-rollup');
 const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss');
 const preset = require('postcss-preset-env');
+const nesting = require('postcss-nested');
 const minify = require('cssnano');
 const server = require('browser-sync').create();
 const mqpacker = require('css-mqpacker');
 const rename = require('gulp-rename');
 
 
-gulp.task('style', function () {
-  gulp.src('css/style.css')
+gulp.task('styles', function () {
+  return gulp.src('css/style.css')
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(postcss([
+      nesting(),
       preset({
         browsers: [
           'last 2 version',
@@ -67,7 +69,7 @@ gulp.task('serve', ['assemble'], function () {
     ui: false
   });
 
-  gulp.watch('css/**/*.{css}', ['style']);
+  gulp.watch('css/style.css', ['styles']);
   gulp.watch('*.html').on('change', (e) => {
     if (e.type !== 'deleted') {
       gulp.start('copy-html');
@@ -77,7 +79,7 @@ gulp.task('serve', ['assemble'], function () {
 });
 
 gulp.task('assemble', ['clean'], function () {
-  gulp.start('copy-html', 'style', 'scripts');
+  gulp.start('copy-html', 'styles', 'scripts');
 });
 
 gulp.task('build', ['assemble']);
