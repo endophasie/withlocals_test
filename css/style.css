@@ -1,0 +1,218 @@
+:root {
+  --mainColor: #4a4a4a;
+  --hoverColor: #e71575;
+}
+
+body {
+  color: #4a4a4a;
+  color: var(--mainColor);
+  margin: 0;
+  padding: 20px 0;
+  font: 400 16px/1.4 Helvetica, Arial, sans-serif;
+}
+
+.link {
+  color: #4a4a4a;
+  color: var(--mainColor);
+  text-decoration: none;
+  -webkit-transition: color 200ms ease-out;
+  transition: color 200ms ease-out;
+}
+
+.link:hover {
+    color: #e71575;
+    color: var(--hoverColor);
+  }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trips {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.trips::after {
+    content: '';
+    width: 32%;
+  }
+
+.trip {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 6px 16px 0 rgba(0,0,0,.15);
+          box-shadow: 0 6px 16px 0 rgba(0,0,0,.15);
+  width: 32%;
+  margin-bottom: 25px;
+}
+
+.trip__content {
+  padding: 0 15px 20px;
+}
+
+.trip__content p {
+    margin: 0;
+  }
+
+.trip__title {
+  margin: 0 15px 12px;
+}
+
+.trip__link:hover .trip__pic img {
+      -webkit-transform: translate(-50%, -50%) scale(1.2);
+              transform: translate(-50%, -50%) scale(1.2);
+      -webkit-transition: -webkit-transform 350ms ease-out;
+      transition: -webkit-transform 350ms ease-out;
+      transition: transform 350ms ease-out;
+      transition: transform 350ms ease-out, -webkit-transform 350ms ease-out;
+    }
+
+.trip__pic {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+.trip__pic img {
+    will-change: transform;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-transition: -webkit-transform 200ms ease-out;
+    transition: -webkit-transform 200ms ease-out;
+    transition: transform 200ms ease-out;
+    transition: transform 200ms ease-out, -webkit-transform 200ms ease-out;
+  }
+
+.trip-page__hosts {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+}
+
+.trip__back::before {
+    content: '\2190';
+    margin-right: 4px;
+  }
+
+.trip-page__fav {
+  will-change: transform;
+  text-indent: -9999px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.trip-page__fav::before,
+  .trip-page__fav::after {
+    position: absolute;
+    content: '';
+    left: 13px;
+    top: 0;
+    width: 13px;
+    height: 20px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+  }
+
+.trip-page__fav::after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+
+.trip-page__fav:hover {
+    -webkit-animation: .8s infinite pulse;
+            animation: .8s infinite pulse;
+  }
+
+.host {
+  margin: 0 12px 12px 0;
+}
+
+.host__pic {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background-size: contain;
+  background-color: #eee;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  60% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
