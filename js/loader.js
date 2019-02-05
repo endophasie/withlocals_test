@@ -1,4 +1,5 @@
 const SERVER_URL = 'https://www.withlocals.com/api/v1/experience/searchWithOthers?adults=2&children=0&date.from=2019-05-10&date.to=2019-05-10&fieldset=reactsearch&lang=en&location.city=rome&location.country=italy&page=1&pagesize=47';
+const CORS_URL = 'https://crossorigin.me/';
 
 const checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
@@ -11,7 +12,7 @@ const toJSON = (response) => response.json();
 
 class Loader {
   static loadData() {
-    return fetch(`${SERVER_URL}`)
+    return fetch(`${CORS_URL}${SERVER_URL}`)
       .then(checkStatus)
       .then(toJSON);
   }
