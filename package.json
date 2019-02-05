@@ -3,24 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "description": "Withlocals code assignment",
+  "homepage": "https://endophasie.github.io/withlocals_test/",
   "scripts": {
     "eslint": "eslint js/",
     "build": "gulp build",
-    "start": "gulp serve"
+    "start": "gulp serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "browser-sync": "2.18.8",
     "css-mqpacker": "6.0.0",
+    "cssnano": "^4.1.8",
     "del": "2.2.2",
     "eslint": "3.19.0",
+    "eslint-config-standard": "^12.0.0",
+    "gh-pages": "^2.0.1",
     "gulp": "3.9.1",
     "gulp-better-rollup": "1.1.1",
     "gulp-plumber": "1.1.0",
     "gulp-postcss": "7.0.0",
     "gulp-rename": "1.2.2",
     "gulp-sourcemaps": "2.6.0",
-    "cssnano": "^4.1.8",
-    "eslint-config-standard": "^12.0.0",
     "postcss-preset-env": "^6.5.0"
   },
   "engines": {
